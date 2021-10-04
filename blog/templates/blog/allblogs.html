@@ -60,8 +60,7 @@
                     <div class="navbar-nav ms-auto">
                         <a class="nav-link" aria-current="page" href="#">Linkedin</a>
                         <a class="nav-link" href="#">Resume</a>
-                        <a class="nav-link" href="#">Analytics Dashboard</a>
-                        <a class="nav-link active" href="/blog/templates/blog/allblogs.html">Blog</a>
+                        <a class="nav-link active" href="#">Blog</a>
                     </div>
                 </div>
             </div>
@@ -69,29 +68,22 @@
     </header>
 
     <main>
+        <div class="container">
 
-        <section class="py-5 text-center container">
-            <div class="row py-lg-5">
-                <div class="col-lg-6 col-md-8 mx-auto">
-                    <h1 class="fw-light">Hi, I'm Thamy</h1>
-                    <p class="lead text-muted">This is my first portfolio made by Django as part of my Analytics career
-                        path.</p>
-                    <p>
-                        <a href="mailto:thamyres@live.com" class="btn btn-primary my-2">Email me</a>
-                    </p>
-                </div>
-            </div>
-        </section>
-
+        <h1 class= "text-center pt-3">Welcome to my Blog</h1>
+        <br />
+        <br />
+        <h2>Latest Post</h2>
+        <hr />
         <div class="album py-5 bg-light">
             <div class="container">
-                <div class ="row">
-                {% for job in jobs.all %}
+                <div class="row">
+                {% for blog in blogs.all %}
                 <div class="col-md-4">
                     <div class="card mb-4 box-shadow">
-                    <img src = "{{ job.image.url }}" class="card-img-top">      
+                    </a><img class = img-fluid" src = "{{ blog.image.url }}" class="card-img-top">
                       <div class="card-body">
-                        <p class="card-text">{{ job.summary }}</p>
+                        </a><p class="card-text"><a href="">{{ blog.title }}</a></p>
                           </div>
                     </div>
                 </div>
@@ -100,8 +92,7 @@
             </div>
         </div>
         </div>
-
-
+        </div>
 
 
     </main>
