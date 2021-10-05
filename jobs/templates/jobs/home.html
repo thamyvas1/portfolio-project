@@ -59,7 +59,8 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav ms-auto">
-                        <a class="nav-link" aria-current="page" href="https://www.linkedin.com/in/thamyresvasconcellos/" target="_blank">Linkedin</a>
+                        <a class="nav-link" aria-current="page" href="https://www.linkedin.com/in/thamyresvasconcellos/"
+                            target="_blank">Linkedin</a>
                         <a class="nav-link" href="{% static 'Resume.pdf' %}" target="_blank">Resume</a>
                         <a class="nav-link" href="{% url 'allblogs' %}">Blog</a>
                         <a class="nav-link" href="{% url 'dash' %}">Analytics</a>
@@ -75,19 +76,21 @@
             <div class="row py-lg-5">
                 <div class="col-lg-6 col-md-8 mx-auto">
                     <h1 class="fw-light">Hi, I'm Thamy</h1>
-                    <p class="lead text-muted">This is my first portfolio made by Django as part of my Analytics career
-                        path.</p>
+                    <p class="lead text-muted">This is my first portfolio made by Django as part of my Analytical
+                        Career. Visit my Blog for latest posts about my learning path.</p>
+                    <img src="{% static 'foto.jpeg' %}" height="300" width="300">
+                    <br>
+                    <br>
                     <p>
                         <a href="mailto:thamyres@live.com" class="btn btn-primary my-2">Email me</a>
                     </p>
-                    <img src = "{% static 'foto.jpeg' %}" height="300" width="300"> 
                 </div>
             </div>
         </section>
     </main>
-
     <footer class="text-muted py-5">
         <div class="container text-center">
+            <hr />
             <p>© Thamy Vasconcellos {% now "Y" %}</p>
         </div>
     </footer>
