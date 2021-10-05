@@ -4,12 +4,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls.conf import include
 import jobs.views
-import dash.views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',jobs.views.home, name='home'),
     path('blog/',include('blog.urls')),
-    path('',dash.views.dash, name='dash'),
+    path('dash/',include('dash.urls')),
+   
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     

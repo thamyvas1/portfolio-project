@@ -1,6 +1,6 @@
-from  django.http import HttpResponse
 from django.shortcuts import render
-import operator
+from .models import Dash
 
 def dash(request):
-    return render(request,'dash.html')
+    dashs = Dash.objects
+    return render(request, 'dash/dash.html', {'dash': dashs})

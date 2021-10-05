@@ -2,12 +2,13 @@
 <html lang="en">
 
 <head>
+    {% load staticfiles %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>Portfolio Home Page</title>
+    <title>Thamy's Blog</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/album/">
 
@@ -50,7 +51,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Thamyres Vasconcellos</a>
+                <a class="navbar-brand" href="{% url 'home' %}">Thamyres Vasconcellos</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -58,9 +59,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav ms-auto">
-                        <a class="nav-link" aria-current="page" href="#">Linkedin</a>
-                        <a class="nav-link" href="#">Resume</a>
-                        <a class="nav-link active" href="#">Blog</a>
+                        <a class="nav-link" aria-current="page" href="https://www.linkedin.com/in/thamyresvasconcellos/"
+                            target="_blank">Linkedin</a>
+                        <a class="nav-link" href="{% static 'Resume.pdf' %}" target="_blank">Resume</a>
+                        <a class="nav-link" href="{% url 'allblogs' %}">Blog</a>
+                        <a class="nav-link" href="{% url 'dash' %}">Analytics</a>
                     </div>
                 </div>
             </div>
@@ -70,28 +73,32 @@
     <main>
         <div class="container">
 
-        <h1 class= "text-center pt-3">Welcome to my Blog</h1>
-        <br />
-        <br />
-        <h2>Latest Post</h2>
-        <hr />
-        <div class="album py-5 bg-light">
-            <div class="container">
-                <div class="row">
-                {% for blog in blogs.all %}
-                <div class="col-md-4">
-                    <div class="card mb-4 box-shadow">
-                    </a><img class = img-fluid" src = "{{ blog.image.url }}" class="card-img-top">
-                      <div class="card-body">
-                        </a><p class="card-text"><a href="">{{ blog.title }}</a></p>
-                          </div>
+            <h1 class="text-center pt-3">Welcome to my Blog</h1>
+            <br />
+            <br />
+            <h2>Latest Post</h2>
+            <hr />
+            <div class="album py-5 bg-light">
+                <div class="container">
+                    <div class="row">
+                        {% for blog in blogs.all %}
+                        <div class="col-md-3">
+                            <div class="card mb-3 box-shadow">
+                                <div class="card-body">
+                                    <img src="{{ blog.image.url }}" height="270" width="270">
+                                    <br>
+                                    </br>
+                                    <p class="card-text">{{ blog.pub_date_pretty}}<br><br />
+                                        <a href="{% url 'detail' blog.id%}">{{ blog.title}}</a><br><br />{{ blog.summary}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
                     </div>
                 </div>
-                {% endfor %}
-
             </div>
-        </div>
-        </div>
         </div>
 
 
