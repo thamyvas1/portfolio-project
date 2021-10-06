@@ -81,7 +81,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'portfoliodb',
         'USER': 'postgres',
-        'PASSWORD': '#*#Xarope90',
+        'PASSWORD': 'djago1234',
         'HOST':'localhost',
         'PORT':'5432',
 
@@ -136,3 +136,8 @@ STATIC_URL = '/path/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/' #Onde no link aparece a media
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
