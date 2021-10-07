@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ''
+SECRET_KEY = 'us=olq*p3=iy6eb1p-5-j45j5#l0^12yx%n50yw+9f8lb5mpaz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -132,12 +132,12 @@ os.path.join(BASE_DIR, 'portfolio/static')
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_URL = '/path/'
+STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/' #Onde no link aparece a media
 
 try:
-    from local_settings import *
+    from .local_settings import *
 except ImportError:
     pass
