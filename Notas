@@ -1,0 +1,15 @@
+
+sudo nano /etc/nginx/sites-available/portfolio
+
+http://134.209.76.206/
+
+sudo apt-get update 
+
+sudo apt-get upgrade
+
+
+{% block content %}
+
+{% endblock %}
+
+token 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
