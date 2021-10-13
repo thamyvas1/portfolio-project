@@ -1,8 +1,6 @@
 {% load staticfiles %}
 <!doctype html>
 <html lang="en">
-{% block content %}
-
 {% if error %}
 <br />
 {{ error }}
@@ -70,6 +68,18 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ms-auto">
+            <a class="nav-link" aria-current="page" href="https://www.linkedin.com/in/thamyresvasconcellos/" target="_blank">
+            <img src="{% static 'linkedin.png' %}" height = 30 width = 30 class ="d-inline-block alighn-top" />
+            </a>
+            <a class="nav-link" href="{% static 'Resume-Thamyres-Vasconcellos.pdf' %}" target="_blank">
+            <img src="{% static 'cv.png' %}" height = 30 width = 30 class ="d-inline-block alighn-top" />
+             </a>
+            <a class="nav-link" href="{% url 'allblogs' %}">
+                <img src="{% static 'blog.png' %}" height = 30 width = 30 class ="d-inline-block alighn-top" />
+            </a>
+            <a class="nav-link" aria-current="page" href="https://github.com/thamyvas1/" target="_blank">
+                <img src="{% static 'git.png' %}" height = 30 width = 30 class ="d-inline-block alighn-top" />
+                </a>
           {% if user.is_authenticated %}
           <a class="nav-link" href="javascript:{document.getElementById('logout').submit()}" onclick="">Logout</a>
           <form id="logout" method="POST" action="{% url 'logout' %}">
@@ -122,4 +132,3 @@
 </body>
 
 </html>
-{% endblock %}
