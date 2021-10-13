@@ -50,11 +50,11 @@
 
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
+            <div class="container">
                 <a class="navbar-brand" href="{% url 'home' %}">
                     <img src="{% static 'lion.png' %}" height=30 width=30 class="d-inline-block alighn-top" />
-                    Thamyres Vasconcellos
-                  </a>
+                    Home
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -62,12 +62,23 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav ms-auto">
-                        <a class="nav-link" aria-current="page" href="https://www.linkedin.com/in/thamyresvasconcellos/"
-                            target="_blank">Linkedin</a>
-                        <a class="nav-link" href="{% static 'Resume.pdf' %}" target="_blank">Resume</a>
-                        <a class="nav-link" href="{% url 'allblogs' %}">Blog</a>
-                        <a class="nav-link" href="{% url 'dash' %}">Analytics</a>
-                    </div>
+                        <div class="navbar-nav ms-auto">
+                            <a class="nav-link" aria-current="page" href="https://www.linkedin.com/in/thamyresvasconcellos/" target="_blank">
+                            <img src="{% static 'linkedin.png' %}" height = 30 width = 30 class ="d-inline-block alighn-top" />
+                            </a>
+                            <a class="nav-link" href="{% static 'Resume-Thamyres-Vasconcellos.pdf' %}" target="_blank">
+                            <img src="{% static 'cv.png' %}" height = 30 width = 30 class ="d-inline-block alighn-top" />
+                             </a>
+                            <a class="nav-link" href="{% url 'allblogs' %}">
+                                <img src="{% static 'blog.png' %}" height = 30 width = 30 class ="d-inline-block alighn-top" />
+                            </a>
+                            <a class="nav-link" aria-current="page" href="https://github.com/thamyvas1/" target="_blank">
+                                <img src="{% static 'git.png' %}" height = 30 width = 30 class ="d-inline-block alighn-top" />
+                                </a>
+                            <a class="nav-link" href="{% url 'login' %}">
+                            <img src="{% static 'analytics.png' %}" height = 30 width = 30 class ="d-inline-block alighn-top" />
+                            </a>
+                        </div>
                 </div>
             </div>
         </nav>
